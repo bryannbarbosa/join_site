@@ -1,0 +1,75 @@
+/* Cores */
+$branco: #fff;
+$verde1: rgb(0, 190, 142);
+$verde2: rgb(18, 169, 170);
+$azul: rgb(111, 147, 193);
+$cinza: rgb(50, 50, 50);
+$cinza-escuro: rgb(17, 17, 17);
+$cinza-claro: rgb(112, 112, 112);
+
+/* Fontes */
+@font-face {
+  font-family: medio;
+  src: url(../fonts/Geometria-Light.otf);
+}
+
+@font-face {
+  font-family: fino;
+  src: url(../fonts/Geometria-Thin.otf);
+}
+
+@font-face {
+  font-family: grosso;
+  src: url(../fonts/Geometria.otf);
+}
+
+$h1: 100px;
+$h2: 46px;
+$h3: 30px;
+$h1-mob: 60px;
+$h2-mob: 36px;
+$pequeno: 18px;
+$medio: 24px;
+$texto: 16px;
+
+/* Resolu├º├Áes */
+$celular: max-width 440px;
+$celular-min: min-width 440px;
+$tablet: max-width 991px;
+$tablet-min: min-width 991px;
+
+@mixin flexbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* Gradiente */
+@mixin gradient($angle, $gradient1, $gradient2, $gradient3) {
+  background-color: $gradient2;
+  background-image: -webkit-gradient(linear, $angle, from($gradient1), to($gradient2));
+  background-image: -webkit-linear-gradient($angle, $gradient1, $gradient2, $gradient3);
+  background-image: -moz-linear-gradient($angle, $gradient1, $gradient2, $gradient3);
+  background-image: -ms-linear-gradient($angle, $gradient1, $gradient2, $gradient3);
+  background-image: -o-linear-gradient($angle, $gradient1, $gradient2, $gradient3);
+  background-image: linear-gradient($angle, $gradient1, $gradient2, $gradient3);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=$angle,StartColorStr='#{$gradient1}', EndColorStr='#{$gradient2}');
+}
+
+/* border-radius */
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+/* Transi├º├Áes */
+@mixin transition($transition...) {
+  -moz-transition: all $transition linear;
+  -o-transition: all $transition linear;
+  -webkit-transition: all $transition linear;
+  transition: all $transition linear;
+}

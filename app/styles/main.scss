@@ -1,0 +1,346 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "sassy-maps/sass/_sassy-maps.scss";
+@import "breakpoint-sass/stylesheets/_breakpoint.scss";
+// endbower
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+video {
+  margin: 0;
+  padding: 0;
+  background: black;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  min-width: 100%;
+  min-height: 100%;
+  width: 200px;
+  height: auto;
+
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  background-color: rgba(0,0,0,0.5);
+
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@import "mixins";
+
+/* tags html */
+html, body {
+  width: 100%;
+  height: 100%;
+
+  //background-color: $cinza-escuro !important
+  color: $branco !important;
+  font-family: medio !important;
+  font-size: $texto;
+
+  @include breakpoint($celular) {
+    font-size: $pequeno;
+  }
+}
+
+h1 {
+  font-size: $h1;
+
+  @include breakpoint($celular);
+
+  font-size: $h1-mob;
+}
+
+h2 {
+  font-size: $h2;
+  font-family: fino !important;
+  margin-bottom: 28px !important;
+  letter-spacing: 5px;
+
+  @include breakpoint($celular) {
+    font-size: $h2-mob;
+  }
+}
+
+h3 {
+  font-size: $h3;
+  font-family: medio !important;
+  letter-spacing: 2px;
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+}
+
+header {
+  position: relative;
+  min-height: 100%;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+section {
+  background-color: $cinza-escuro;
+  min-width: 100%;
+  min-height: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.anchor {
+  color: $branco !important;
+}
+
+.anchor:hover {
+  color: $branco !important;
+}
+
+a {
+  color: $branco !important;
+  transition-duration: 0.5s;
+}
+
+a:hover {
+  color: $cinza-claro !important;
+  text-decoration: none !important;
+}
+
+.menu {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  z-index: 99999 !important;
+}
+
+.item-menu {
+  width: 28px;
+  height: 4px;
+  display: block;
+  margin-bottom: 5px;
+  background: $branco;
+  opacity: 0.5;
+  transition-duration: 0.5s;
+}
+
+.item-menu:hover {
+  background: $branco;
+  opacity: 0.2;
+  width: 14px;
+}
+
+.item-menu-active {
+  @extend .item-menu;
+  width: 14px;
+  opacity: 0.4;
+}
+
+.menu-slct {
+  width: 50px;
+  height: 4px;
+  display: block;
+  margin-bottom: 5px;
+  background: $branco;
+  transition-duration: 0.5s;
+}
+
+/* classes personalizadas */
+.logo {
+  text-align: center;
+
+  h1 {
+    margin-bottom: 0px;
+  }
+
+  .descricao {
+    font-size: $medio;
+    font-family: fino;
+    word-spacing: 18px;
+
+    @include breakpoint($celular) {
+      font-size: $pequeno;
+    }
+  }
+}
+
+.linha {
+  width: 380px;
+  margin: auto;
+  height: 1px;
+  margin-bottom: 20px;
+  opacity: 0.25;
+
+  @include gradient(90deg, $cinza-escuro, $branco, $cinza-escuro);
+  @include breakpoint($celular) {
+    width: 80%;
+  }
+}
+
+.linha-s {
+  width: 220px;
+  margin: auto;
+  height: 1px;
+  margin-bottom: 20px;
+  opacity: 0.25;
+
+  @include gradient(90deg, $cinza-escuro, $branco, $cinza-escuro);
+}
+
+.vc {
+  color: $verde1;
+  font-family: fino;
+}
+
+.ve {
+  color: $verde2;
+  font-family: fino;
+}
+
+.a {
+  color: $azul;
+  font-family: fino;
+}
+
+.titulo {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.img-sobre {
+  height: 500px;
+  background: $cinza-claro;
+
+  @include breakpoint($celular) {
+    display: none;
+  }
+}
+
+.img-perfil {
+  margin-bottom: 40px !important;
+}
+
+.nome {
+  font-size: 18px;
+  font-family: fino;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+}
+
+.item {
+  margin-bottom: 80px;
+}
+
+.carousel-indicators {
+  li {
+    border-radius: 0 !important;
+    height: 25px !important;
+    width: 6px !important;
+    margin: 0 !important;
+    border: 0 !important;
+    background: $cinza-claro !important;
+    transition-duration: 0.5s;
+  }
+
+  .active {
+    background: $branco !important;
+  }
+}
+
+.card {
+  margin-top: 60px;
+
+  p {
+    font-size: $pequeno;
+    margin-top: 50px;
+  }
+}
+
+.img-site {
+  background: $cinza-claro;
+  width: 200px;
+  height: 200px;
+
+  @include border-radius(50%);
+}
+
+form {
+  font-size: 12px;
+}
+
+.form-group {
+  input, textarea {
+    background-color: $cinza;
+    font-family: grosso;
+    font-size: 12px !important;
+    color: $branco;
+    border: none;
+    height: 60px;
+    margin-bottom: 10px;
+
+    @include border-radius(0);
+  }
+
+  input:focus, textarea:focus {
+    box-shadow: none;
+  }
+}
+
+.botao {
+  letter-spacing: 2px;
+  height: 50px;
+  background: none;
+  border: none;
+  border-top: solid 1px;
+  border-bottom: solid 1px;
+  padding-top: 6px;
+  transition-duration: 1s;
+}
+
+.botao:hover {
+  font-family: grosso;
+  color: $cinza-escuro;
+  background: $branco;
+  border-top: solid 1px;
+  border-bottom: solid 1px;
+  transition-duration: 0.5s;
+}
+
+.desktop {
+  @include breakpoint($tablet) {
+    display: none;
+  }
+}
+
+.mobile {
+  @include breakpoint($tablet-min) {
+    display: none;
+  }
+}
